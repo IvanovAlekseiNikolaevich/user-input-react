@@ -18,7 +18,7 @@ const AddUser = (props) => {
         title: 'Invalid input',
         message: 'Please enter a valid name and age (non-empty values).'
       })
-     return
+      return
     } else if (+enteredAge < 1 || +enteredAge > 100) {
       setError({
         title: 'Invalid age',
@@ -32,11 +32,11 @@ const AddUser = (props) => {
   };
 
   const usernameChangeHandler = event => {
-        setEnteredUsername(event.target.value)
+    setEnteredUsername(event.target.value)
   }
 
   const ageChangeHandler = event => {
-      setEnteredAge(event.target.value)
+    setEnteredAge(event.target.value)
   }
 
   const errorHandler = () => {
@@ -44,16 +44,16 @@ const AddUser = (props) => {
   }
 
   return (<Wrapper>
-    {error && <ErrorModal title={error.title} message={error.message} onCloseModal={errorHandler}/>}
-    <Card className={classes.input}>
-      <form onSubmit={addUserHandler}>
-        <label htmlFor="username">Username</label>
-        <input id="username" type="text" onChange={usernameChangeHandler} value={enteredUsername}/>
-        <label htmlFor="age">Age (Years)</label>
-        <input id="age" type="number" onChange={ageChangeHandler} value={enteredAge}/>
-        <Button type='submit'>add user</Button>
-      </form>
-    </Card>
+      {error && <ErrorModal title={error.title} message={error.message} onCloseModal={errorHandler}/>}
+      <Card className={classes.input}>
+        <form onSubmit={addUserHandler}>
+          <label htmlFor="username">Username</label>
+          <input id="username" type="text" onChange={usernameChangeHandler} value={enteredUsername}/>
+          <label htmlFor="age">Age (Years)</label>
+          <input id="age" type="number" onChange={ageChangeHandler} value={enteredAge}/>
+          <Button type='submit'>add user</Button>
+        </form>
+      </Card>
     </Wrapper>
   );
 };
